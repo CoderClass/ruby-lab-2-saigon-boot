@@ -26,6 +26,14 @@
           <a class="nav-link" href="<%= users_path %>">Browse Profiles</a>
         </li>
       </ul>
+      <% if signed_in? %>
+      <div >
+        <span> Welcome, <%= current_user.name %> </span>
+      </div>
+      <div>
+        <%= link_to "Logout", log_out_path, class:'btn btn-secondary', method:'get' %>
+      </div>
+      <%end%>
     </div>
   </nav>
 
@@ -35,7 +43,7 @@
     <div class="container">
         Made with <%= image_tag('heart') %> in Sai Gon
     </div>
-  </footer>    
+  </footer>
 
 </body>
 </html>
